@@ -17,13 +17,13 @@ build_script:
   - dotnet build Akka.FtpClient.sln --configuration Release
 
 #test_script:
-  #- dotnet test .\src\Akka.FtpClient.Tests.csproj
+  #- dotnet test src\Akka.FtpClient.Tests.csproj
 
 after_test:
-  - dotnet pack .\src\Akka.FtpClient.csproj --configuration=Release --output=".\Nuget"
+  - dotnet pack src\Akka.FtpClient.csproj --configuration=Release --output=".\Nuget"
 
 artifacts:
-  - path: .\src\Akka.FtpClient\Nuget\*.nupkg
+  - path: src\Akka.FtpClient\Nuget\*.nupkg
 
 deploy:
   provider: NuGet
