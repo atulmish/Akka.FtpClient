@@ -29,7 +29,7 @@ build_script:
   #- dotnet test test\
 
 after_test:
-  - dotnet pack .\src\Akka.FtpClient\Akka.FtpClient.csproj --configuration=Release --output=".\Nuget"
+  - dotnet pack .\src\Akka.FtpClient\Akka.FtpClient.csproj --configuration=Release --output=".\Nuget" /p:Version=%appveyor_build_version%
 
 artifacts:
   - path: .\src\Akka.FtpClient\Nuget\*.nupkg
