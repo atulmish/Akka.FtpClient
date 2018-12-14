@@ -14,7 +14,7 @@ before_build:
   - dotnet --version
 
 build_script:
-  - dotnet build Akka.FtpClient.sln --configuration Release
+  - dotnet build .\Akka.FtpClient.sln --configuration Release
 
 #test_script:
   #- dotnet test test\
