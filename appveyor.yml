@@ -1,4 +1,4 @@
-version: '1.0.{build}'
+version: '0.0.{build}'
 
 clone_depth: 50
 
@@ -12,6 +12,15 @@ before_build:
   - powershell -File dotnet-install.ps1
   - set PATH=%PATH%;%LOCALAPPDATA%\Microsoft\dotnet
   - dotnet --version
+  
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
 
 build_script:
   - dotnet build .\Akka.FtpClient.sln --configuration Release
