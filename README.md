@@ -1,2 +1,2 @@
-# akka.ftp
+# Akka.FtpClient
 Ftp Library for Actors Model
